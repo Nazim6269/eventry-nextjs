@@ -1,12 +1,11 @@
-import Login from '@/components/Login';
-import Navbar from '@/components/Navbar';
+import CardList from '@/components/landing/CardList';
+import Header from '@/components/landing/Header';
 
 export default function Home() {
   return (
-    <div>
-      <Navbar />
-      Eventry
-      <Login />
-    </div>
+    <section className="container">
+      <Header />
+      <CardList />
+    </section>
   );
 }
