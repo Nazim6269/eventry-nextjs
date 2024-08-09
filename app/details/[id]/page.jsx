@@ -1,7 +1,9 @@
 import EventDetails from '@/components/details/EventDetails';
+import { getEventById } from '@/db/queries';
 
-const page = () => {
-  return <EventDetails />;
+const EventDetailsPage = async ({ params: { id } }) => {
+  const event = await getEventById(id);
+  return <EventDetails event={event} />;
 };
 
-export default page;
+export default EventDetailsPage;
