@@ -1,6 +1,6 @@
 const Payment = () => {
   return (
-    <form>
+    <form className="login-form">
       <div className="my-4 space-y-2">
         <label htmlFor="name" className="block">
           Name

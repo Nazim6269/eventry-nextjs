@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import eventImage from '../../public/google-io-2023-1.png';
 import ActionButtons from '../ActionsButton';
 
 const Hero = ({ event }) => {
@@ -26,7 +25,11 @@ const Hero = ({ event }) => {
         </div>
 
         <div className="w-full flex gap-4 mt-4 flex-1 ">
-          <ActionButtons fromDetails={true} />
+          <ActionButtons
+            eventId={event?.id}
+            interestedUserIds={event?.interested_ids}
+            fromDetails={true}
+          />
         </div>
       </div>
     </section>
