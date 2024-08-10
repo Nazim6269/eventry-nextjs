@@ -7,7 +7,7 @@ const Navbar = () => {
     <nav>
       <div className="container flex justify-between items-center py-4">
         <div className="nav-brand">
-          <Link href="index.html">
+          <Link href="/">
             <Image src={logoImage} alt="Eventry" className="h-[45px]" />
           </Link>
         </div>

@@ -18,4 +18,8 @@ const createUser = async (user) => {
   return await userModel.create(user);
 };
 
-export { createUser, getAllEvents, getEventById };
+const findUserByCredentials = async (credentials) => {
+  return await userModel.findOne(credentials);
+};
+
+export { createUser, findUserByCredentials, getAllEvents, getEventById };
