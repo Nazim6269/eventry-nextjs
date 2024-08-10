@@ -19,7 +19,11 @@ const createUser = async (user) => {
 };
 
 const findUserByCredentials = async (credentials) => {
-  return await userModel.findOne(credentials);
+  const user = await userModel.findOne(credentials).lean();
+
+  if (user) return removeIdInObj(user);
+
+  return null;
 };
 
 export { createUser, findUserByCredentials, getAllEvents, getEventById };

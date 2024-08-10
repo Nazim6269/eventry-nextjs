@@ -1,4 +1,4 @@
-import { registerUser } from '@/app/actions';
+import { registerUser } from '@/actions';
 
 const Register = () => {
   return (

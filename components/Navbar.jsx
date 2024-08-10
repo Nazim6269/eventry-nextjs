@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import logoImage from '../public/logo.svg';
+import LogInOut from './LogInOut';
 
 const Navbar = () => {
   return (
@@ -14,9 +15,10 @@ const Navbar = () => {
 
         <ul className="flex gap-4 text-[#9C9C9C]">
           <li>
-            <Link href="/login">Login</Link>
+            <LogInOut />
           </li>
           <li>Contact Us</li>
+          <li>About</li>
         </ul>
       </div>
     </nav>
