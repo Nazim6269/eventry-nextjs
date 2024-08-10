@@ -1,4 +1,5 @@
 import { eventModel } from '@/models/eventModels';
+import { userModel } from '@/models/userModel';
 import { removeIdInObj, removeMongoId } from '@/utils/dataUtils';
 
 const getAllEvents = async () => {
@@ -13,4 +14,8 @@ const getEventById = async (id) => {
   return removeIdInObj(event);
 };
 
-export { getAllEvents, getEventById };
+const createUser = async (user) => {
+  return await userModel.create(user);
+};
+
+export { createUser, getAllEvents, getEventById };
