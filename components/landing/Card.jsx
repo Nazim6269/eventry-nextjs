@@ -1,10 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import ActionButtons from '../ActionsButton';
+import EventSchemaScript from '../meta/EventSchemaScript';
 
 const Card = ({ event }) => {
   return (
     <div className="overflow-hidden rounded-md bg-[#242526]">
+      <EventSchemaScript event={event} />
       <Image
         src={event?.imageUrl}
         alt={event?.name}
@@ -25,7 +27,8 @@ const Card = ({ event }) => {
         </div>
         <ActionButtons
           eventId={event?.id}
-          interestedUserIds={event?.interest_ids}
+          interestedUserIds={event?.interested_ids}
+          goingUserIds={event?.going_ids}
         />
       </div>
     </div>

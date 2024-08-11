@@ -1,6 +1,12 @@
-const Payment = () => {
+'use client';
+
+import { addGoingEvent } from '@/actions';
+import { useAuth } from '@/hooks/useAuth';
+
+const Payment = ({ eventId }) => {
+  const { auth } = useAuth();
   return (
-    <form className="login-form">
+    <form className="login-form" action={() => addGoingEvent(eventId, auth)}>
       <div className="my-4 space-y-2">
         <label htmlFor="name" className="block">
           Name
