@@ -3,8 +3,14 @@ import { userModel } from '@/models/userModel';
 import { removeIdInObj, removeMongoId } from '@/utils/dataUtils';
 import mongoose from 'mongoose';
 
-const getAllEvents = async () => {
-  const events = await eventModel.find().lean();
+const getAllEvents = async (query) => {
+  let events = [];
+  if (query) {
+    const regex = new RegExp(query, 'i');
+    events = await eventModel.find({ name: { $regex: regex } }).lean();
+  } else {
+    events = await eventModel.find().lean();
+  }
 
   return removeMongoId(events);
 };
